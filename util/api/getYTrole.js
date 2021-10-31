@@ -32,16 +32,6 @@ const YoutubeRole = async (data) => {
         }
   )
 
-  // console.log(result.data.items[0])
-
-  // const response = await axios
-  //   .get(
-  //     `https://www.googleapis.com/youtube/v3/channels?part=statistics,snippet&${
-  //       id ? `id=${id}` : `forUsername=${username}`
-  //     }&key=${process.env.YT_KEY}`
-  //   )
-  //   .then((res) => res.data)
-
   if (!result.data) {
     console.log("data not found")
     return false
@@ -49,7 +39,7 @@ const YoutubeRole = async (data) => {
 
   followerCount = await result.data.items[0].statistics.subscriberCount
 
-  if (followerCount < 1 || !followerCount) return -1
+  if (!followerCount) return -1
 
   return {
     name: name || result.data.items[0].snippet.title,
