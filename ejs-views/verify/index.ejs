@@ -1,0 +1,25 @@
+<!-- Menambahkan script hcaptcha -->
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+<script src="/js/hcaptcha.js" async defer></script>
+
+
+    <% if (verify_id === data_verify.verifyId) { %>
+      Anda
+      <span style="font-weight: 700">belum</span> jadi
+      <span style="font-weight: 700">warga terdaftar</span>!
+      <form method="post" id="verify-form" style="margin-top: 1.5em; margin-bottom: .5em;">
+        <button class="h-captcha button" data-sitekey="873f4fa9-84bd-461b-b54b-e2ff8c6f9bd4" data-callback="onSubmit">
+        Verifikasi Sekarang!
+        </button><br>
+      </form>
+      <small>This site is protected by hCaptcha and its
+      <a href="https://hcaptcha.com/privacy">Privacy Policy</a> and
+      <a href="https://hcaptcha.com/terms">Terms of Service</a> apply.</small>
+    <% } else { %>
+      Link tidak valid!<br />
+      <span style="font-weight: 700">Cek link verifikasi di DM</span> atau <span style="font-weight: 700"></span>klik disini</span>
+      <form action="/verify/send" method="post" style="margin-top: 1.5em">
+  <button type="submit" style="font-weight: 700" class="button">
+    Send Verify Link
+  </button>
+      <% } %>

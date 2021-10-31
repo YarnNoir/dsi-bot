@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Kulim Park", sans-serif;
+  font-weight: 200;
+  color: white;
+  @media (prefers-color-scheme: light) {
+    color: black;
+  }
+
+  a {
+    font-weight: 400;
+    color: rgb(192, 192, 192);
+    @media (prefers-color-scheme: light) {
+      color: rgb(51, 51, 51);
+    }
+
+    &:hover {
+      color: rgb(238, 238, 238);
+      @media (prefers-color-scheme: light) {
+        color: rgb(36, 36, 36);
+      }
+    }
+  }
+}
+
+.body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(10, 10, 10, 0.6);
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  @media (prefers-color-scheme: light) {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+#bg-img {
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: 50% 50%; /* or: center center */
+  background-size: cover;
+  background-repeat: no-repeat; /* CSS3 */
+  z-index: -99;
+  position: absolute;
+  filter: grayscale(100%);
+}
+
+header {
+  width: 100vw;
+  height: 260px;
+  display: grid;
+  grid-template-columns: 47vw;
+  grid-template-rows: 5fr 1fr;
+  row-gap: 15px;
+  place-content: center;
+  justify-items: center;
+  margin-bottom: 20px;
+
+  svg {
+    justify-self: center;
+    align-self: end;
+    width: 70%;
+
+    @media (min-width: 768px) {
+      width: 30%;
+    }
+  }
+
+  h2 {
+    align-self: center;
+    font-family: "Katibeh", cursive;
+  }
+}
+
+.cls-1 {
+  fill: rgb(235, 235, 235);
+
+  @media (prefers-color-scheme: light) {
+    fill: rgb(37, 37, 37);
+  }
+}
+
+.main {
+  margin: auto;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.button {
+  border: none;
+  background-color: #03a9f4;
+  color: white !important;
+  padding: 0.3em 0.5em;
+  font-weight: 400;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+
+  &.logout {
+    background-color: #f44336;
+  }
+}
+
+.img {
+  width: clamp(250px, 70vw, 1200px);
+}

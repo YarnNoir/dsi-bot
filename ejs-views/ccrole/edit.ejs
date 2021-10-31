@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/font-awesome/css/all.min.css" />
+<link rel="stylesheet" href="/css/content.css" />
+<script src="/js/account.js" defer async></script>
+
+<% if (!user.content || user.content.length < 1) { %>
+<h3 style="font-weight: 500">I can't found Youtube/Twitch account</h3>
+<% } else { %>
+<div class="cards">
+  <form action="/content" method="post">
+    <label for="content">Your Linked Account</label>
+    <select name="content" id="content" class="account">
+      <% user.content.forEach(acc => { %>
+      <option value="<%= acc.id %>/<%= acc.type %>">
+        <%= acc.name %> (<%= acc.type %>)
+      </option>
+      <% }) %>
+    </select>
+    <br />
+    <label for="twitter">Your Twitter:</label><br />
+    <input type="text" name="twitter" id="twitter" class="text" />
+    <input type="checkbox" name="vtuber" id="vtuber" class="check" />
+    <label for="vtuber">You're vtuber?</label>
+    <br />
+    <button
+      href="#"
+      type="submit"
+      class="button"
+      style="font-size: 0.9rem; margin-top: 0.5em"
+    >
+      Save
+    </button>
+  </form>
+</div>
+
+More Account? <% } %>
+<div class="login">
+  <br />
+  <a href="/content/connect" class="button">Login to Youtube & Twitch</a>
+  <a href="/content/how-to" class="button">Get Content Creator role in DM</a>
+</div>

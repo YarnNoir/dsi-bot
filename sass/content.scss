@@ -1,0 +1,53 @@
+.cards {
+  margin: auto;
+  margin-bottom: 1rem;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    width: 50vw;
+  }
+
+  label {
+    font-size: 0.9em;
+    padding: 0.6em 0;
+  }
+
+  .account {
+    width: 100%;
+    font-size: 0.9em;
+    font-weight: 700;
+    background-color: rgba(37, 37, 37, 0.6);
+    border: 0.1em solid white;
+    margin: 0.5em 0;
+    padding: 0.5em 0.7em;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: white;
+      color: rgb(26, 26, 26);
+
+      .fab {
+        color: rgb(26, 26, 26);
+      }
+    }
+  }
+
+  .text {
+    width: 100%;
+    font-size: 0.9em;
+    font-weight: 700;
+    background-color: rgba(37, 37, 37, 0.6);
+    border: 0.1em solid white;
+    margin-top: 0.4em;
+    padding: 0.5em 0.7em;
+    border-radius: 25px;
+  }
+
+  .check {
+    margin-top: 1em;
+  }
+}
