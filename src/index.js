@@ -93,22 +93,6 @@ const server = (client) => {
   app.listen(port, () => {
      console.log(`web active, listen ${port}`)
   })
-  const appHttps = https.createServer(
-    {
-      key: fs.readFileSync(path.join(__dirname, "../etc/https/key.pem")),
-      cert: fs.readFileSync(path.join(__dirname, "../etc/https/cert.pem")),
-    },
-    app
-  )
-
-  // if (process.env.BASE_URL === "https://discord.dsiworld.my.id")
-  // appHttps.listen(port, () =>
-  //  console.log(`web active with https, listen ${port}`)
-  // )
-  // else
-  //   app.listen(port, () => {
-  //     console.log(`web active, listen ${port}`)
-  //   })
 }
 
 module.exports = { server }
